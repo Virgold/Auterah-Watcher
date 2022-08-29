@@ -10,8 +10,8 @@ import { LoadingButton } from '@mui/lab';
 // components
 import Iconify from '../../../components/Iconify';
 import { FormProvider, RHFTextField, RHFCheckbox } from '../../../components/hook-form';
-
 // ----------------------------------------------------------------------
+import { axiosClient } from '../../../utils/axios';
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -39,8 +39,24 @@ export default function LoginForm() {
     formState: { isSubmitting },
   } = methods;
 
-  const onSubmit = async () => {
-    navigate('/dashboard', { replace: true });
+  const onSubmit = async ({ email, password }) => {
+    try {
+      const response = await axiosClient.post('/auth/login', {
+        email, 
+        password
+      })
+      
+      
+      console.log(response);
+      if (response.success) {
+        const { data } = response;
+        localStorage.setItem('token', 'token');
+        navigate('/dashboard/app', { replace: true });
+        return;
+      }
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (

@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Outlet, useNavigate } from 'react-router-dom';
+
 // material
 import { styled } from '@mui/material/styles';
 //
@@ -34,7 +35,15 @@ const MainStyle = styled('div')(({ theme }) => ({
 
 export default function DashboardLayout() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
+  // useEffect(() => {
+  
+  //   const token=localStorage.getItem('token')
+  //   if (!token) 
+  //     return navigate('/login', { replace: true });
+
+  // })
   return (
     <RootStyle>
       <DashboardNavbar onOpenSidebar={() => setOpen(true)} />

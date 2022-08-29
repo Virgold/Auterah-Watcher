@@ -222,7 +222,7 @@ export default function User() {
             onPageChange={handleChangePage}
             onRowsPerPageChange={handleChangeRowsPerPage}
           />
-        </Card>
+        </Card> 
       </Container>
     </Page>
   );

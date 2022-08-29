@@ -1,0 +1,18 @@
+POST https://auterahwatchers.herokuapp.com/api/auth/register
+Content-Type: application/json
+
+{
+    "email":"demogmail.com",
+    "password":"123"
+}
+
+###
+POST https://auterahwatchers.herokuapp.com/api/auth/login
+Content-Type: application/json
+
+{
+    "email":"demogmail.com",
+    "password":"123"
+}
+
+###
