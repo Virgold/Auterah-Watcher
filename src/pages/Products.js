@@ -5,7 +5,7 @@ import { Container, Stack, Typography } from '@mui/material';
 import Page from '../components/Page';
 import { ProductSort, ProductList, ProductCartWidget, ProductFilterSidebar } from '../sections/@dashboard/products';
 // mock
-import PRODUCTS from '../_mock/products';
+// import PRODUCTS from '../_mock/products';
 
 // ----------------------------------------------------------------------
 
@@ -38,7 +38,7 @@ export default function EcommerceShop() {
           </Stack>
         </Stack>
 
-        <ProductList products={PRODUCTS} />
+        {/* <ProductList products={PRODUCTS} /> */}
         <ProductCartWidget />
       </Container>
     </Page>
