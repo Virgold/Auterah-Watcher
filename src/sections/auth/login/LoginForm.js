@@ -41,19 +41,19 @@ export default function LoginForm() {
 
   const onSubmit = async ({ email, password }) => {
     try {
-      const response = await axiosClient.post('/auth/login', {
-        email, 
-        password
-      })
+      // const response = await axiosClient.post('/auth/login', {
+      //   email, 
+      //   password
+      // })
       
       
-      console.log(response);
-      if (response.success) {
-        const { data } = response;
-        localStorage.setItem('token', 'token');
+      // console.log(response);
+      // if (response.success) {
+      //   const { data } = response;
+      //   localStorage.setItem('token', 'token');
         navigate('/dashboard/app', { replace: true });
-        return;
-      }
+      //   return;
+      // }
     } catch (error) {
       console.log(error)
     }
